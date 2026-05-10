@@ -8,7 +8,9 @@ const App = () => {
     <div className="h-screen flex justify-center items-center flex-col gap-10 font-mono">
       <h1 className="text-5xl">Simple counter</h1>
       <div className="flex flex-col gap-5">
-        <p className="font-[1.5rem] text-center">Counter: {count}</p>
+        <p className="font-[1.5rem] text-center">
+          Counter: {count} {count % 2 == 0 ? "Even" : "Odd"}
+        </p>
         <div className="flex gap-5">
           <Btn
             click={() => setCount(count + 1)}
