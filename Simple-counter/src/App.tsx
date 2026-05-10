@@ -16,6 +16,12 @@ const App = () => {
           >
             Add
           </Btn>
+          <Btn
+            click={() => setCount(0)}
+            style="border rounded-md px-5 py-3 cursor-pointer"
+          >
+            Reset
+          </Btn>
         </div>
       </div>
     </div>
