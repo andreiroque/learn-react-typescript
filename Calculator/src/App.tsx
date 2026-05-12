@@ -45,7 +45,7 @@ const App = () => {
     setNum1(0);
     setOperation("");
 
-    setText(result.toString());
+    setText(result.toLocaleString());
   };
 
   const operationStyle =
