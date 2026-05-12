@@ -2,7 +2,7 @@ import { useState } from "react";
 import Btn from "./Btn";
 
 const App = () => {
-  const [text, setText] = useState<string>("0"); // Displaying
+  const [text, setText] = useState<string>("0");
   const [num1, setNum1] = useState<number>(0);
   const [operation, setOperation] = useState<string>("");
   const [waitingForNum1, setWaitingForNum1] = useState<boolean>(true);
