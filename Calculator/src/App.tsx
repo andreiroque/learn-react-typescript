@@ -56,8 +56,8 @@ const App = () => {
   return (
     <div className="h-screen flex items-center justify-center text-white font-mono ">
       <div className="h-screen w-84 bg-zinc-950">
-        <div className="h-1/4 mt-6 flex items-end justify-end">
-          <p className="text-8xl">{text}</p>
+        <div className="h-1/4 mt-6 flex items-end justify-end p-5">
+          <p className={text.length >= 4 ? "text-5xl" : "text-8xl"}>{text}</p>
         </div>
         <div className="h-2/3 flex flex-col gap-5">
           <div className="w-full w- flex justify-center items-center gap-3 h-28">
@@ -67,7 +67,7 @@ const App = () => {
                 setNum1(0);
                 setOperation("");
               }}
-              style="h-16 w-56 rounded-full cursor-pointer hover:opacity-75 bg-zinc-400 text-3xl text-black"
+              style="h-16 w-54 rounded-full cursor-pointer hover:opacity-75 bg-zinc-400 text-3xl text-black"
             >
               AC
             </Btn>
