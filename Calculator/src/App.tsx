@@ -8,9 +8,6 @@ const App = () => {
   const [waitingForNum1, setWaitingForNum1] = useState<boolean>(true);
   const [waitingForNum2, setWaitingForNum2] = useState<boolean>(false);
 
-  // TODO: Edge cases
-  // 1.) if 1 whole process is done (1 + 1 = 2) the total is not being set as the first num if an operation is pressed.
-
   const handleInput = (t: string) => {
     if (waitingForNum1 && operation.length == 0) {
       setText(text.replace(/^0+/, "").concat(t));
@@ -23,7 +20,7 @@ const App = () => {
     setOperation(t);
     setWaitingForNum1(false);
     setWaitingForNum2(true);
-    setNum1(parseFloat(text));
+    setNum1(parseFloat(text.replace(",", "")));
     setText("0");
   };
 
@@ -51,6 +48,10 @@ const App = () => {
     setWaitingForNum2(false);
 
     setText(result.toLocaleString());
+  };
+
+  const handleDel = () => {
+    setText(text.slice(0, -1)); // Delete the last character from the string.
   };
 
   const operationStyle =
@@ -123,14 +124,14 @@ const App = () => {
             </Btn>
           </div>
           <div className="w-full  flex justify-center items-center gap-3 h-26">
-            <Btn
-              click={() => handleInput("0")}
-              style="h-16 w-36 rounded-full cursor-pointer hover:opacity-75 bg-neutral-700 text-3xl"
-            >
+            <Btn click={() => handleInput("0")} style={numStyle}>
               0
             </Btn>
             <Btn click={() => handleInput(".")} style={numStyle}>
               .
+            </Btn>
+            <Btn click={() => handleDel()} style={numStyle}>
+              ←
             </Btn>
             <Btn click={() => handleEqualClick()} style={operationStyle}>
               =
