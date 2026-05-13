@@ -51,7 +51,11 @@ const App = () => {
   };
 
   const handleDel = () => {
-    setText(text.slice(0, -1)); // Delete the last character from the string.
+    if (text.length > 1) {
+      setText(text.slice(0, -1)); // Delete the last character from the string.
+    } else {
+      setText("0");
+    }
   };
 
   const operationStyle =
