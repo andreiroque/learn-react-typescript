@@ -8,6 +8,9 @@ const App = () => {
   const [waitingForNum1, setWaitingForNum1] = useState<boolean>(true);
   const [waitingForNum2, setWaitingForNum2] = useState<boolean>(false);
 
+  // TODO: Edge cases
+  // 1.) if 1 whole process is done (1 + 1 = 2) the total is not being set as the first num if an operation is pressed.
+
   const handleInput = (t: string) => {
     if (waitingForNum1 && operation.length == 0) {
       setText(text.replace(/^0+/, "").concat(t));
@@ -44,6 +47,8 @@ const App = () => {
 
     setNum1(0);
     setOperation("");
+    setWaitingForNum1(true);
+    setWaitingForNum2(false);
 
     setText(result.toLocaleString());
   };
