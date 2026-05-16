@@ -37,7 +37,7 @@ const App = () => {
           </div>
         </div>
         <div className="p-5">
-          <ul className="list-disc">
+          <ul className="list-decimal">
             {todo.map((t) => (
               <li key={t}>
                 {t}{" "}
